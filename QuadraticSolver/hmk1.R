@@ -29,3 +29,4 @@ if (d == 0) {
   cat("Two complex roots: NaNs \n")
 }
 
+# Test line
