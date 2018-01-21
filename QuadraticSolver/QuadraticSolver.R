@@ -1,31 +1,12 @@
 #!/usr/bin/env Rscript
 
-# VARIABLE DECLARATIONS
+QS <- function(values) {
+# QS (QuadraticSolver) solves quadratic equations 
+  cat("Enter the coefficients for a, b, and c: ")
+	a <- as.numeric(readline("a = "))
+	b <- as.numeric(readline("b = "))
+	c <- as.numeric(readline("c = "))
 
-
-args <- commandArgs(trailingOnly = TRUE)
-values <- c(args[1], args[2], args[3])
-cat(values)
-
-
-QuadraticSolver <- function() {
-# QuadraticSolver solves quadratic esquations
-
-	# division by zero returns undefined
-	if (a == 0) {
-		stop("error: division by zero: undefined")
-	}
-
-	# discriminant d = (b² - 4ac)
-	d <- (b^2) - (4*a*c)
+	cat("You entered ", a, b, c)
 	
-	if (d < 0) {
-		cat("No real solutions")	
-	}
-
-
-}
-
-TestQS <- function() {
-# insert unit test implementationn code
 }
