@@ -10,8 +10,8 @@ QS <- function(a, b, c) {
 #		3 = no real roots
 #		4 = only one root
 #
-	res <- list()
-	for (val in c("err", "x1", "x2")) {
+  res <- list()
+  for (val in c("err", "x1", "x2")) {
 		res[[val]] <- NA
 	}
 
