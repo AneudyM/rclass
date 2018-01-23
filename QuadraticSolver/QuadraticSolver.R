@@ -1,5 +1,11 @@
 #!/usr/bin/env Rscript
 
+cat("Please, enter coefficients a, b, and c \n")
+a <- readline("a = ")
+b <- readline("b = ")
+c <- readline("c = ")
+
+
 QS <- function(a, b, c) {
 # QS (QuadraticSolver) solves quadratic equations
 # QS returns a vector of three values err, x1, and x2
@@ -13,21 +19,21 @@ QS <- function(a, b, c) {
 
   res <- list()
   for (val in c("err", "x1", "x2")) {
-	res[[val]] <- NA
+	  res[[val]] <- NA
   }
 
   # Coefficients must be numeric
   if (!is.numeric(a) || !is.numeric(b) || !is.numeric(c)) {
-	#cat("non-numeric input\n")
-	res$err <- 1
-	return(res)
+	  #cat("non-numeric input\n")
+	  res$err <- 1
+	  return(res)
   }
 
   # a must be greater than 0
   if (a == 0) {
-	#cat("undefined: division by zero\n")
+	  #cat("undefined: division by zero\n")
   	res$err <- 2
-	return(res)
+	  return(res)
   }
 
   # Discriminant = b²-4ac
@@ -46,27 +52,27 @@ QS <- function(a, b, c) {
 
   if (d == 0) {
     #cat("Only one root (x1 = x2): ", "\n")
-	res$x1  <- ((-b)/(2*a))
-	res$x2  <- ((-b)/(2*a))
-	if (res$x1 == res$x2) {
-	  res$err <- 4
-	}
-	return(res)	
+	  res$x1  <- ((-b)/(2*a))
+	  res$x2  <- ((-b)/(2*a))
+	  if (res$x1 == res$x2) {
+	    res$err <- 4
+	  }
+	  return(res)	
   }
 
   if (d > 0) {
-	#cat("Two real roots\n")
-	res$x1  <- ((-b) - (sqrt(d)))/(2*a)
-	res$x2  <- ((-b) + (sqrt(d)))/(2*a)
-	res$err <- 0 
-	return(res)
+	  #cat("Two real roots\n")
+	  res$x1  <- ((-b) - (sqrt(d)))/(2*a)
+	  res$x2  <- ((-b) + (sqrt(d)))/(2*a)
+	  res$err <- 0 
+	  return(res)
   }
 }
 
 
 QSTest01 <- function() {
 # TEST01: Tests whether the input values are numeric or not
-# Case 1: non numeric a
+  # Case 1: non numeric a
   a <- "p"
   b <- 9
   c <- -5
@@ -77,7 +83,7 @@ QSTest01 <- function() {
     cat("TEST01: Case 1: PASSED\n")
   }
 
-# Case 2: non numeric b
+  # Case 2: non numeric b
   a <- 3
   b <- "5"
   c <- 2
@@ -88,7 +94,7 @@ QSTest01 <- function() {
 	cat("TEST01: Case 2: PASSED\n")
   }
 
-# Case 3: non numeric c
+  # Case 3: non numeric c
   a <- 3
   b <- 5
   c <- "2"
