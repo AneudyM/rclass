@@ -41,11 +41,7 @@ QS <- function(a, b, c) {
   
   # Only one root
   if (d == 0) {
-    res$x1  <- ((-b) / (2 * a))
-    res$x2  <- ((-b) / (2 * a))
-    if (res$x1 == res$x2) {
-      res$err <- 4
-    }
+    res$err <- 4
     return(res)
   }
   
