@@ -118,7 +118,7 @@ QSTest <- function() {
   r <- QS(a, b, c)
   
   if (r$err != 3) {
-    cat("TEST02: FAILED\n")
+    cat("TEST03: FAILED\n")
   }
 
   # TEST04 tests only one real root return
